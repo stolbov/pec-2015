@@ -29,10 +29,10 @@ define([
             zoom: 13,
             sliderStyle: 'small'
         },
-        // panes: {
-        // 	left: {
-        // 		splitter: true
-        // 	},
+        panes: {
+        	left: {
+        		splitter: true
+        	},
         // 	right: {
         // 		id: 'sidebarRight',
         // 		placeAt: 'outer',
@@ -54,7 +54,7 @@ define([
         // 		splitter: true,
         // 		region: 'top'
         // 	}
-        // },
+        },
         // collapseButtonsPane: 'center', //center or outer
 
         // operationalLayers: Array of Layers to load on top of the basemap: valid 'type' options: 'dynamic', 'tiled', 'feature'.
@@ -84,13 +84,22 @@ define([
             //         }
             // }, {
                     type: 'feature',
-                    url: 'http://gisweb.chebtelekom.ru/arcgis/rest/services/pec2015_2/FeatureServer/0',
+                    url: 'http://gisweb.chebtelekom.ru/arcgis/rest/services/tek/tek_2015_features/FeatureServer/0',
                     title: 'Границы мкр.',
                     options: {
                         id: '',
                         opacity: 1.0,
                         visible: true,
-                        outFields: ['kolich_zhilcov', 'ploshad_zastroiki', 'comment'],
+                        outFields: [
+                            'mkr_name',
+                            'territory',
+                            'ploshad_zastroiki',
+                            'zhil_obesp',
+                            'kolich_zhilcov',
+                            'norm_pl',
+                            'fakt_pl',
+                            'koef_pl_zastr'
+                        ],
                         mode: 0
                     }
             // }, {
@@ -113,7 +122,7 @@ define([
             //         }
             }, {
                     type: 'dynamic',
-                    url: 'http://gisweb.chebtelekom.ru/arcgis/rest/services/pec_2015/MapServer',
+                    url: 'http://gisweb.chebtelekom.ru/arcgis/rest/services/tek/tek_2015/MapServer',
                     title: 'План застройки',
                     options: {
                         id: '',

@@ -1,14 +1,14 @@
 define ({
     root: {
         labels: {
-            selectLayer: 'Choose "All Visible Layers" or a single layer for identify:',
-            allVisibleLayers: '*** All Visible Layers ***'
+            selectLayer: 'Выберите "Все видимые слои" или слой из списка для идентификации:',
+            allVisibleLayers: '*** Все видимые слои ***'
         },
         rightClickMenuItem: {
-            label: 'Идентифицировать'
+            label: 'Идентификация'
         },
         mapInfoWindow: {
-            identifyingTitle: 'Identifying...'
+            identifyingTitle: 'Распознование...'
         }
     }
 });
