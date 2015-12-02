@@ -7,8 +7,10 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>ТЭП 2015</title>
-        <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.14compact/esri/css/esri.css">
-        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.14compact/esri/css/esri.css">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="fromInet/esri.css">
+        <link rel="stylesheet" type="text/css" href="fromInet/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/theme/dbootstrap/dbootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
@@ -37,6 +39,7 @@
         <script type="text/javascript">
             var dojoConfig = {
                 async: true,
+                // baseUrl: 'arcgis_js_v314_api/arcgis_js_api/library/3.14/3.14compact/dojo/',
                 packages: [{
                     name: 'viewer',
                     location: location.pathname.replace(/[^\/]+$/, '') + 'js/viewer'
@@ -52,7 +55,8 @@
         <!--[if lt IE 9]>
             <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.3/es5-shim.min.js"></script>
         <![endif]-->
-        <script type="text/javascript" src="//js.arcgis.com/3.14compact/"></script>
+        <!--<script type="text/javascript" src="//js.arcgis.com/3.7compact/"></script>-->
+        <script type="text/javascript" src="arcgis_js_api/library/3.14/3.14/init.js"></script>
         <script type="text/javascript">
             // get the config file from the url if present
             var file = 'config/viewer', s = window.location.search, q = s.match(/config=([^&]*)/i);
