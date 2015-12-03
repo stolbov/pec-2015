@@ -3,8 +3,10 @@ define([
    'esri/geometry/Extent',
    'esri/config',
    'esri/tasks/GeometryService',
-   'esri/layers/ImageParameters'
-], function (units, Extent, esriConfig, GeometryService, ImageParameters) {
+   'esri/layers/ImageParameters',
+    'esri/dijit/Basemap',
+    'esri/dijit/BasemapLayer'
+], function (units, Extent, esriConfig, GeometryService, ImageParameters, Basemap, BasemapLayer) {
 
     // url to your proxy page, must be on same machine hosting you app. See proxy folder for readme.
     esriConfig.defaults.io.proxyUrl = 'proxy/proxy.ashx';
@@ -24,7 +26,14 @@ define([
         defaultMapClickMode: 'identify',
         // map options, passed to map constructor. see: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
         mapOptions: {
-            basemap: 'osm',
+            // basemap: 'osm',
+            basemap: new Basemap({
+                layers: [
+                    new BasemapLayer({
+                        url: 'http://gisweb.chebtelekom.ru/arcgis/rest/services/cheb_base/cheb_base_v5/MapServer'
+                    })
+                ]
+            }),
             center: [47.248288, 56.126173],
             zoom: 13,
             sliderStyle: 'small'
